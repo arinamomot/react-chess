@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd6dd;
+}
+
+.board {
+    position: relative;
+    width: calc(64px * 8);
+    height: calc(64px * 8);
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+.cell {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell .coordinates {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 10px;
+}
+
+.cell:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.cell img {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
+.black {
+    background-color: cornflowerblue;
+}
+
+.white {
+    background-color: #fcc09a;
+}
+
+.selected {
+    background: repeating-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+    background-size: 400% 400%;
+    animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 80% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.available {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #6ef66e;
+}
+
+.currentPlayer {
+    margin-bottom: 1rem;
+}
+
+.lost {
+    height: calc(50vh - 60px);
+    padding: 30px;
+    margin-left: 50px;
+    background-color: #abd9ea;
+}
